@@ -1,0 +1,1 @@
+{"mappings":"AAAA;EACI;EACA","sources":["src/scss/style.scss"],"sourcesContent":["h1{\r\n    font-size: 180px;\r\n    color: pink;\r\n}"],"names":[],"version":3,"file":"index.fd3751ca.css.map","sourceRoot":"/__parcel_source_root/"}
