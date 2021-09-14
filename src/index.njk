@@ -5,5 +5,14 @@ layout: 'base.njk'
 
 
 <h1></h1>
+.card {
+    @include m.pseudo($loc:before, $pos:relative, $top:20);
+
+    @include m.mq(small){
+        .body { 
+            font-size: 2rem;                
+            }        
+    }
+}
 
 
