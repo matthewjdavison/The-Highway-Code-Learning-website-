@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Vanilla-html - v1.0.0</title><link rel="stylesheet" href="assets/css/main.css"><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,500,700" rel="stylesheet" type="text/css"><meta name="viewport" content="width=device-width"><meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible"><!-- Open Graph tags --><meta property="og:title" content="Vanilla-html - SassDoc"><meta property="og:type" content="website"><meta property="og:description" content="<p>A template project for HTML, CSS and JavaScript including SASS, ESLint and Prettier.</p>
+"><!-- Thanks to Sass-lang.com for the icons --><link href="assets/images/favicon.png" rel="shortcut icon"></head><body><aside class="sidebar" role="nav"><div class="sidebar__header"><h1 class="sidebar__title">Vanilla-html - 1.0.0</h1></div><div class="sidebar__body"><button type="button" class="btn-toggle js-btn-toggle" data-alt="Open all">Close all</button><p class="sidebar__item sidebar__item--heading" data-slug="undefined"><a href="#undefined">General</a></p><div><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-variable"><a href="#undefined-variable">variables</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="breakpoints" data-type="variable"><a href="#undefined-variable-breakpoints">breakpoints</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="colours" data-type="variable"><a href="#undefined-variable-colours">colours</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="type-scale" data-type="variable"><a href="#undefined-variable-type-scale">type-scale</a></li></ul><p class="sidebar__item sidebar__item--sub-heading" data-slug="undefined-mixin"><a href="#undefined-mixin">mixins</a></p><ul class="list-unstyled"><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="mq" data-type="mixin"><a href="#undefined-mixin-mq">mq</a></li><li class="sidebar__item sassdoc__item" data-group="undefined" data-name="pseudo" data-type="mixin"><a href="#undefined-mixin-pseudo">pseudo</a></li></ul></div></div></aside><article class="main" role="main"><header class="header" role="banner"><div class="container"><div class="sassdoc__searchbar searchbar"><label for="js-search-input" class="visually-hidden">Search</label><div class="searchbar__form" id="js-search"><input name="search" type="search" class="searchbar__field" autocomplete="off" autofocus id="js-search-input" placeholder="Search"><ul class="searchbar__suggestions" id="js-search-suggestions"></ul></div></div></div></header><section class="main__section"><h1 class="main__heading" id="undefined"><div class="container">General</div></h1><section class="main__sub-section" id="undefined-variable"><h2 class="main__heading--secondary"><div class="container">variables</div></h2><section class="main__item container item" id="undefined-variable-breakpoints"><h3 class="item__heading"><a class="item__name" href="#variable-breakpoints">breakpoints</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$breakpoints: (
+    small: 40em,
+    medium: 65em
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>A SASS map for breakpoints. Mostly used by the mq mixin. Found in src/scss/abstracts/_breakpoints.scss</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p><h3 class="item__sub-heading">Used by</h3><ul class="list-unstyled"><li><span class="item__cross-type">[mixin]</span> <a href="#undefined-mixin-mq"><code>mq</code></a></li></ul></section><section class="main__item container item" id="undefined-variable-colours"><h3 class="item__heading"><a class="item__name" href="#variable-colours">colours</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$colours: (
+    primary: (
+        100: hsl(14,100%,80%),
+        200: hsl(14,100%,70%),
+        300: hsl(14,100%,60%),
+        400: hsl(14,100%,43%),
+        500: hsl(14,100%,20%),
+    ),
+
+    neutral: (
+        100: hsl(0,0%,100%),
+        200: hsl(0,0%,87%),
+        300: hsl(0,0%,80%),
+        700: hsl(0,0%,40%),
+        800: hsl(0,0%,30%),
+        900: hsl(0,0%,15%),
+    )
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>A SASS map for a colour scheme. Mostly used to create custom properties and utility classes. Found in src/scss/abstracts/variables/_colours.scss</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p></section><section class="main__item container item" id="undefined-variable-type-scale"><h3 class="item__heading"><a class="item__name" href="#variable-type-scale">type-scale</a></h3><div class="item__code-wrapper"><pre class="item__code language-scss"><code>$type-scale: (
+    small:(
+        300: 1rem,
+        400: 1.125rem,
+        500: 1.563rem,
+        600: 1.953rem,
+        700: 2.441rem,
+        800: 3.052rem,
+    ),
+    large:(
+        300: 1rem,
+        400: 1.425rem,
+        500: 2rem,
+        600: 2.827rem,
+        700: 4rem,
+        800: 5.635rem,
+    )
+);</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>A SASS map for the type scale. Mostly used to create custom properties and for pre-defined media queries. Found in src/scss/abstracts/variables/_type-scale.scss</p></div><h3 class="item__sub-heading">Type</h3><p><code>Map</code></p></section></section><section class="main__sub-section" id="undefined-mixin"><h2 class="main__heading--secondary"><div class="container">mixins</div></h2><section class="main__item container item" id="undefined-mixin-mq"><h3 class="item__heading"><a class="item__name" href="#mixin-mq">mq</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin mq($key) { 
+    $size: map-get(bp.$breakpoints, $key);
+    
+    @media only screen and (min-width:$size) {
+        @content;
+    }
+ }" data-collapsed="@mixin mq($key) { ... }"><code>@mixin mq($key) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>A mixin for media queries.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$key</code></th><td data-label="desc"><p>A key from the breakpoints sass map.</p></td><td data-label="type"><code>Unquoted text</code></td><td data-label="default">&mdash;<span class="visually-hidden"> none</span></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>usage</p></div><pre class="example__code language-scss"><code>@include mixins.mq(small){
+  .body { 
+      font-size: 2rem;                
+      }        
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>result</p></div><pre class="example__code language-css"><code>  @media only screen and (min-width: 40em) {
+    .body { font-size: 2rem; }
+}</code></pre></div><h3 class="item__sub-heading">Requires</h3><ul class="list-unstyled"><li class="item__description item__description--inline"><span class="item__cross-type">[variable]</span> <a href="#undefined-variable-breakpoints"><code>breakpoints</code></a></li><li class="item__description item__description--inline"><span class="item__cross-type">[external]</span> <code>bp.$breakpoints</code> &mdash; The breakpoints sass map. Should be defined in &#39;_breakpoints.scss&#39;</li></ul></section><section class="main__item container item" id="undefined-mixin-pseudo"><h3 class="item__heading"><a class="item__name" href="#mixin-pseudo">pseudo</a></h3><div class="item__code-wrapper"><pre class="item__code item__code--togglable language-scss" data-current-state="collapsed" data-expanded="@mixin pseudo($loc: before, $content: &#39;&#39;, $pos: absolute, $top: 0, $bottom: 0, $left: 0, $right: 0) { 
+    position: relative;
+
+    &amp;::#{$loc}{
+        content: $content;
+        position: $pos;
+        top: $top;
+        bottom: $bottom;
+        left: $left;
+        right: $right;
+    }
+ }" data-collapsed="@mixin pseudo($loc: before, $content: &#39;&#39;, $pos: absolute, $top: 0, $bottom: 0, $left: 0, $right: 0) { ... }"><code>@mixin pseudo($loc: before, $content: &#39;&#39;, $pos: absolute, $top: 0, $bottom: 0, $left: 0, $right: 0) { ... }</code></pre></div><h3 class="item__sub-heading">Description</h3><div class="item__description"><p>A positioning pseudo element.</p></div><h3 class="item__sub-heading">Parameters</h3><table class="item__parameters"><thead><tr><th scope="col"><span class="visually-hidden">parameter </span>Name</th><th scope="col"><span class="visually-hidden">parameter </span>Description</th><th scope="col"><span class="visually-hidden">parameter </span>Type</th><th scope="col"><span class="visually-hidden">parameter </span>Default value</th></tr></thead><tbody><tr class="item__parameter"><th scope="row" data-label="name"><code>$loc</code></th><td data-label="desc"><p>The pseudo element. Either before OR after.</p></td><td data-label="type"><code>Unquoted text</code></td><td data-label="default"><code>before</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$content</code></th><td data-label="desc"><p>the content of the element.</p></td><td data-label="type"><code>Unquoted text</code></td><td data-label="default"><code>&#39;&#39;</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$pos</code></th><td data-label="desc"><p>the position.</p></td><td data-label="type"><code>Unquoted text</code></td><td data-label="default"><code>absolute</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$top</code></th><td data-label="desc"><p>The top constraint of the object.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$bottom</code></th><td data-label="desc"><p>The bottom constraint of the object.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$left</code></th><td data-label="desc"><p>The left constraint of the object.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr><tr class="item__parameter"><th scope="row" data-label="name"><code>$right</code></th><td data-label="desc"><p>The right constraint of the object.</p></td><td data-label="type"><code>Number</code></td><td data-label="default"><code>0</code></td></tr></tbody></table><h3 class="item__sub-heading">Example</h3><div class="item__example example"><div class="example__description"><p>positioned pseudo usage</p></div><pre class="example__code language-scss"><code>.card {
+  @include mixins.pseudo($loc:before, $pos:relative, $top:20);
+}</code></pre></div><div class="item__example example"><div class="example__description"><p>positioned pseudo result</p></div><pre class="example__code language-scss"><code>.card {
+  position: relative;
+}
+.card::before {
+  content: &quot;&quot;;
+  position: relative;
+  top: 20;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}</code></pre></div><h3 class="item__sub-heading">Output</h3><div class="item__description"><p>&#39;positioned pseudo element&#39;</p></div><h3 class="item__sub-heading">Author</h3><ul class="list-unstyled"><li><p>Matthew Davison</p></li></ul></section></section></section><footer class="footer" role="contentinfo"><div class="container"><div class="footer__project-info project-info"><!-- Name and URL --> <span class="project-info__name">Vanilla-html</span><!-- Version --> <span class="project-info__version">- v1.0.0</span><!-- License --> <span class="project-info__license">, under GPL-3.0-or-later</span></div><a class="footer__watermark" href="http://sassdoc.com"><img src="assets/images/logo_light_inline.svg" alt="SassDoc Logo"></a></div></footer></article><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="assets/js/vendor/jquery.min.js"><\/script>')</script><script src="assets/js/main.min.js"></script></body></html>

@@ -1,0 +1,71 @@
+@use 'breakpoints' as bp;
+
+/// A mixin for media queries.
+/// @param {Unquoted Text} $key - A key from the breakpoints sass map.
+/// @require {variable} bp.$breakpoints - The breakpoints sass map. Should be defined in '_breakpoints.scss'
+/// @example scss - usage
+///   @include mixins.mq(small){
+///     .body { 
+///         font-size: 2rem;                
+///         }        
+///   }
+/// @example css - result
+///   @media only screen and (min-width: 40em) {
+///     .body { font-size: 2rem; }
+/// }
+
+    
+@mixin mq($key) {
+    $size: map-get(bp.$breakpoints, $key);
+    
+    @media only screen and (min-width:$size) {
+        @content;
+    }
+}
+/// A positioning pseudo element. 
+/// @param {Unquoted Text} $loc [before] - The pseudo element. Either before OR after.
+/// @param {Unquoted Text} $content [''] - the content of the element.
+/// @param {Unquoted Text} $pos [absolute] - the position.
+/// @param {Number} $top [0] - The top constraint of the object.
+/// @param {Number} $bottom [0] - The bottom constraint of the object.
+/// @param {Number} $left [0] - The left constraint of the object.
+/// @param {Number} $right [0] - The right constraint of the object. 
+/// @output 'positioned pseudo element'
+/// @author Matthew Davison
+/// @content [Normally empty, but can be edited with $content]
+/// @example scss - positioned pseudo usage
+/// .card {
+///   @include mixins.pseudo($loc:before, $pos:relative, $top:20);
+/// }
+/// @example scss - positioned pseudo result
+/// .card {
+///   position: relative;
+/// }
+/// .card::before {
+///   content: "";
+///   position: relative;
+///   top: 20;
+///   bottom: 0;
+///   left: 0;
+///   right: 0;
+/// }
+@mixin pseudo(
+    $loc:before,
+    $content: '',
+    $pos: absolute,
+    $top: 0,
+    $bottom: 0,
+    $left: 0,
+    $right: 0,
+){
+    position: relative;
+
+    &::#{$loc}{
+        content: $content;
+        position: $pos;
+        top: $top;
+        bottom: $bottom;
+        left: $left;
+        right: $right;
+    }
+}

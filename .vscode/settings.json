@@ -1,0 +1,10 @@
+{
+    "eslint.validate": [
+        "javascript", // ...
+        "html" // Add "html" to enable linting `.html` files.
+    ],
+    "eslint.workingDirectories": [
+        "./src"
+    ],
+    "git.ignoreLimitWarning": true
+}
