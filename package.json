@@ -28,8 +28,8 @@
     "eslint-config-prettier": "^8.3.0",
     "html-validate": "^5.5.0",
     "parcel": "^2.0.0-rc.0",
-    "parcel-namer-rewrite": "^2.0.0-rc.0",
-    "parcel-namer-without-hash": "0.0.1",
-    "prettier": "^2.4.0"
-  }
+    "prettier": "^2.4.0",
+    "sassdoc": "^2.7.3"
+  },
+  "dependencies": {}
 }
