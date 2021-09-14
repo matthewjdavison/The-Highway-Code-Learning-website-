@@ -4,6 +4,14 @@
 @use 'base/root';
 
 
+<<<<<<< HEAD
+=======
+h1 {
+    font-size: 1.5em;
+    color: orange;
+}
+
+>>>>>>> template/master
 
 .card {
     @include m.pseudo($loc:before, $pos:relative, $top:20);
