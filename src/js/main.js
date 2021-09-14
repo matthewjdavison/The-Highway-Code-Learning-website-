@@ -1,0 +1,1 @@
+document.querySelector('#copyright').innerHTML = `&copy; ${new Date().getFullYear()} Matthew Davison. All rights reserved.`;;

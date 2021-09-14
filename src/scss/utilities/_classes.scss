@@ -1,4 +1,4 @@
-@use './abstracts/colours' as *;
+@use '../abstracts/variables/colours' as *;
 
 @each $colour, $shades in $colours {
     @each $shade, $value in $shades {
