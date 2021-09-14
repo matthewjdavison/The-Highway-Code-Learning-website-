@@ -1,0 +1,16 @@
+@charset 'utf-8';
+@use 'vendors/normalize.css';
+@use 'abstracts/mixins' as m;
+@use 'base/root';
+
+
+
+.card {
+    @include m.pseudo($loc:before, $pos:relative, $top:20);
+
+    @include m.mq(small){
+        .body { 
+            font-size: 2rem;                
+            }        
+    }
+}

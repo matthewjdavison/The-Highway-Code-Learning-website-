@@ -1,0 +1,58 @@
+@use '../abstracts/variables/type-scale' as *;
+@use '../abstracts/variables/colours' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/breakpoints' as *;
+
+:root {
+    // {1}: Iterate through each colour in the colour map (Primary, secondary, accent etc)
+    // {2}: Iterate through each shade in shades list from the colour map
+    // {3}: Using the value of $colour, $shade and $value, create a custom property for each colour shade.
+    
+    // @requires $colours - Colour map, found externally.
+
+    // @param {map} $colours - the colours from the colour map.
+    // @param {variable} $colour - the name of the colour, for example. 'Primary'. 
+    //   A key in the map of colours
+    // @param {list of colours} $shades - the lists of shades within the colour (typically ranging from
+    //   100 to 900). A value in the map of colours
+       
+    // @param {number} $shade - a number. A key in the map of $shades
+    // @param {colour} $value - a hex colour code. A value in the map of $shades
+
+    @each $colour, $shades in $colours { // {1}
+        @each $shade, $value in $shades { // {2}
+            --clr-#{$colour}-#{$shade}: #{$value}; // {3}
+        }
+    }
+    // {1}: Iterate through each type-scale in the type-scale map.
+    // {2}: If, on the current type-scale, the $screen-size value is "Small", move on.
+    // {3}: for each font-size, create a custom variable.
+    // {4}: If the $screen-size value is anything other than "Small" do this instead.
+    // {5}: Include the mq mixin and give it the 'small' breakpoint.
+    // {6}: For each font-size, create a custom variable inside the media query.
+
+    // @requires $type-scale - Type scale, found externally.
+
+    // @param {map} $type-scale
+    // @param {variable} $screen-size - The key in the map of $type-scale
+    // @param {list of sizes} $shades - the lists of shades within the colour (typically ranging from 100 to 900). A value in the list of colours
+        
+    // @param {number} $shade - a number. A key in the list of $shades
+    // @param {colour} $value - a hex colour code. A value in the list of $shades
+
+    @each $screen-size, $font-size in $type-scale { // {1}
+        @if $screen-size == small { //{2}
+            @each $size, $value in $font-size { // {3}
+                --fs-#{$size}: #{$value};
+            }
+        } 
+        @else { // {4}
+            @include mq(small){ // {5}
+                @each $size, $value in $font-size { // {6}
+                    --fs-#{$size}: #{$value};
+                }
+            }
+
+        } 
+    }
+}

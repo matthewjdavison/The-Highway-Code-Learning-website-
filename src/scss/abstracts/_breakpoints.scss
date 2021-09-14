@@ -1,0 +1,6 @@
+/// A SASS map for breakpoints. Mostly used by the mq mixin. Found in src/scss/abstracts/_breakpoints.scss
+/// @type Map 
+$breakpoints: (
+    small: 40em,
+    medium: 65em
+);
